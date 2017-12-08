@@ -19,6 +19,7 @@ gem 'foreman'
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'pry-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
