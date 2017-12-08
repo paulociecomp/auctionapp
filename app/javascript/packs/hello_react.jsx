@@ -5,6 +5,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import Button from 'react-toolbox/lib/button/Button'
+import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
+import theme from '../react-toolbox/theme';
 
 const Hello = props => (
   <div>Hello {props.name}!</div>
@@ -20,7 +23,9 @@ Hello.propTypes = {
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <ThemeProvider theme={theme}>
+      <Button label="Hello World!" raised primary />
+    </ThemeProvider>,
     document.body.appendChild(document.createElement('div')),
   )
 })
