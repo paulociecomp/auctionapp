@@ -23,7 +23,7 @@ class BatchDetail extends React.Component{
     })
     .then((response) => {
         response.json().then( (data) => {
-          const disabled = false;
+          let disabled = false;
           if(data.batch.status === 'sold') disabled = true;
 
           this.setState({ batch: data.batch, disabled: disabled });
