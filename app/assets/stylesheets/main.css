@@ -1,9 +1,9 @@
 body{
   padding: 0;
   margin: 0;
-  background-color: #ECEFF1;
+  background-color: #333340;
   height:100%;
-  color: #37474F;
+  color: #C6C6C8;
 }
 
 .theme--custom-light-bg {
@@ -21,7 +21,16 @@ body{
   min-height: 480px;
   background-color: #37474F;
   color: #fff;
-  background: url(/assets/clem-onojeghuo-197522.jpg);
+  background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.4)
+          ),
+          linear-gradient(
+            to left,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.4)
+          ), url(/assets/clem-onojeghuo-197522.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -52,6 +61,10 @@ body{
  color: #fff;
  padding: 20px;
  cursor: pointer;
+}
+
+.input-dark label{
+  color: #C6C6C8;
 }
 
 @media screen and (max-width: 500px) {

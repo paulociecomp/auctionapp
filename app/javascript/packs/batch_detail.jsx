@@ -59,25 +59,28 @@ class BatchDetail extends React.Component{
 
   render(){
     return (
-      <div>
-        <h1 className="mdc-typography--display3">{this.state.batch.product}</h1>
-        <p className="mdc-typography--body1">{this.state.batch.description}</p>
+      <div className="mdc-layout-grid__inner" style={{textAlign: 'center'}}>
+        <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4"></div>
+        <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-4-phone ">
+          <h1 className="mdc-typography--display3">{this.state.batch.product}</h1>
 
-        <p>Lance inicial: <span className="mdc-typography--display3">{this.state.batch.initial_bid}</span></p>
-        <p>Valor Atual do Lance: <span className="mdc-typography--display3">{this.state.batch.current_bid}</span></p>
+          <p><span className="mdc-typography--display3">R$ {this.state.batch.current_bid}</span></p>
 
+          <p className="mdc-typography--body1">{this.state.batch.description}</p>
 
-        <p>Status: <span className="mdc-typography--display1">{this.state.batch.status}</span></p>
+          <p><span className="mdc-typography--display1">{this.state.batch.status}</span></p>
 
-        <Button label='Lance' raised primary onClick={this.handleClick} />
+          <Button label='Lance' raised primary onClick={this.handleClick} />
 
-        <Snackbar
-          active={this.state.snackbar}
-          label={this.state.message}
-          timeout={5000}
-          onTimeout={this.handleSnackbarTimeout}
-          type='warning'
-        />
+          <Snackbar
+            active={this.state.snackbar}
+            label={this.state.message}
+            timeout={5000}
+            onTimeout={this.handleSnackbarTimeout}
+            type='warning'
+          />
+        </div>
+        <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4"></div>
       </div>
     );
   }

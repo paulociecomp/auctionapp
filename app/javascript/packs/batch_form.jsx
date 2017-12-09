@@ -64,47 +64,56 @@ class FormBatch extends React.Component{
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <Input
-          type='text'
-          label='Descrição'
-          name='batch[description]'
-          value={this.state.description}
-          onChange={this.handleChange.bind(this, 'description')}
-          required={true}
-        />
+      <div className="mdc-layout-grid__inner" style={{textAlign: 'center'}}>
+        <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4"></div>
+        <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-4-phone ">
+          <h1 className="mdc-typography--display3">Novo lote</h1>
+          <form onSubmit={this.handleSubmit}>
+            <Input
+              type='text'
+              label='Descrição'
+              name='batch[description]'
+              value={this.state.description}
+              onChange={this.handleChange.bind(this, 'description')}
+              required={true}
+              className="input-dark"
+            />
 
-        <Input
-          type='text'
-          label='Produto'
-          name='batch[product]'
-          value={this.state.product}
-          onChange={this.handleChange.bind(this, 'product')}
-          required={true}
-        />
+            <Input
+              type='text'
+              label='Produto'
+              name='batch[product]'
+              value={this.state.product}
+              onChange={this.handleChange.bind(this, 'product')}
+              required={true}
+              className="input-dark"
+            />
 
-        <Input
-          type='text'
-          label='Lance Inicial'
-          name='batch[initial_bid]'
-          value={this.state.initial_bid}
-          onChange={this.handleChange.bind(this, 'initial_bid')}
-          maxLength={10}
-          required={true}
-        />
+            <Input
+              type='text'
+              label='Lance Inicial'
+              name='batch[initial_bid]'
+              value={this.state.initial_bid}
+              onChange={this.handleChange.bind(this, 'initial_bid')}
+              required={true}
+              className="input-dark"
+            />
 
-        <Input
-          type='text'
-          label='Valor do Arremate'
-          name='batch[finish_bid]'
-          value={this.state.finish_bid}
-          onChange={this.handleChange.bind(this, 'finish_bid')}
-          maxLength={10}
-          required={true}
-        />
+            <Input
+              type='text'
+              label='Valor do Arremate'
+              name='batch[finish_bid]'
+              value={this.state.finish_bid}
+              onChange={this.handleChange.bind(this, 'finish_bid')}
+              required={true}
+              className="input-dark"
+            />
 
-        <Button type="submit" label='Enviar' raised primary />
-      </form>
+            <Button type="submit" label='Enviar' raised primary />
+          </form>
+        </div>
+        <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4"></div>
+      </div>
     )
   }
 }

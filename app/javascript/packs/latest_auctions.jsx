@@ -33,17 +33,13 @@ class LatestAuctions extends React.Component{
   render(){
     const list = this.state.batches.map((batch) =>
       <div key={batch.id} className="mdc-layout-grid__cell mdc-layout-grid__cell--span-3 mdc-layout-grid__cell--span-4-phone ">
-        <Card key={batch.id} style={{width: '100%'}}>
-          <CardMedia
-            aspectRatio="wide"
-            image="https://placeimg.com/800/450/nature"
-          />
+        <Card key={batch.id} style={{width: '100%', height: '350px', backgroundColor: '#41434F'}}>
           <CardTitle
             title={batch.product}
           />
           <CardText>{batch.description}</CardText>
           <CardActions>
-            <Button label="Detalhe" onClick={() => this.handleClick(batch.id)} />
+            <Button label="Detalhes" onClick={() => this.handleClick(batch.id)} />
           </CardActions>
         </Card>
       </div>
