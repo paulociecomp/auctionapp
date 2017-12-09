@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
 
-Things you may want to cover:
+* Ruby 2.2+
+* Rails 4.2+
+* Node.js 6.0.0+
+* Yarn 0.25.2+
 
-* Ruby version
+## Usage
 
-* System dependencies
+Run the bundle:
 
-* Configuration
+```bash
+bundle install
+```
 
-* Database creation
+Install the javascript dependences:
 
-* Database initialization
+```bash
+npm install
+```
 
-* How to run the test suite
+Run the app:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+foreman start -f Procfile.dev 
+```
 
-* Deployment instructions
+Access http://localhost:3000
 
-* ...
