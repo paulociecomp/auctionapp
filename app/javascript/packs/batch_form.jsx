@@ -10,7 +10,9 @@ class FormBatch extends React.Component{
     description: '',
     product: '',
     initial_bid: '',
-    finish_bid: ''
+    finish_bid: '',
+    disabled: false,
+    label: "Enviar"
   }
 
   formatReal( int ){
@@ -44,6 +46,8 @@ class FormBatch extends React.Component{
     const token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
     const formData = new FormData(document.querySelector('form'));
 
+    this.setState({ disabled: true, label: 'Enviando...' });
+
     fetch("/batches", {
       method: 'POST',
       headers: {
@@ -54,6 +58,7 @@ class FormBatch extends React.Component{
     })
     .then((response) => {
       response.json().then((data) => {
+        this.setState({ label: "Ok" });
         window.location = '/';
       });
     })
@@ -109,7 +114,7 @@ class FormBatch extends React.Component{
               className="input-dark"
             />
 
-            <Button type="submit" label='Enviar' raised primary />
+            <Button type="submit" label={this.state.label} raised primary disabled={this.state.disabled} />
           </form>
         </div>
         <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-4"></div>
