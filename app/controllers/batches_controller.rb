@@ -18,10 +18,7 @@ class BatchesController < ApplicationController
   end
 
   def create
-    @batch = Batch.new batch_params
-    @batch.current_bid = @batch.initial_bid
-    @batch.bid_count = 0
-    @batch.status = :open
+    @batch = Batch.build batch_params
 
     if @batch.save
       render json: @batch, status: :created

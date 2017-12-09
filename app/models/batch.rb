@@ -1,5 +1,6 @@
 class Batch < ApplicationRecord
   include ConvertDecimalAttributes
+  include BatchStatus
 
   convert_decimal :initial_bid
   convert_decimal :finish_bid
@@ -15,8 +16,12 @@ class Batch < ApplicationRecord
     save
   end
 
-  def open?
-    self.status == 'open'
+  def self.build(batch_params)
+    batch = Batch.new batch_params
+    batch.current_bid = batch.initial_bid
+    batch.bid_count = 0
+    batch.status = :open
+    batch
   end
 
   private
