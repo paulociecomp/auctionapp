@@ -9,7 +9,8 @@ class BatchDetail extends React.Component{
 
   state = {
     batch: {},
-    snackbar: false
+    snackbar: false,
+    disabled: false
   }
 
   handleSnackbarTimeout = (event, instance) => {
@@ -22,7 +23,10 @@ class BatchDetail extends React.Component{
     })
     .then((response) => {
         response.json().then( (data) => {
-          this.setState({ batch: data.batch });
+          const disabled = false;
+          if(data.batch.status === 'sold') disabled = true;
+
+          this.setState({ batch: data.batch, disabled: disabled });
         })
     })
     .catch((err) => {
@@ -33,6 +37,8 @@ class BatchDetail extends React.Component{
 
   handleClick = () => {
     const token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+
+    this.setState({ disabled: true });
 
     fetch(`/batches/${this.state.batch.id}/bids`, {
       method: 'POST',
@@ -47,8 +53,10 @@ class BatchDetail extends React.Component{
           this.setState({ batch: data.batch, message: data.message, snackbar: true });
         }
         else{
-          this.setState({ batch: data.batch });
+          this.setState({ batch: data.batch, snackbar: true, message: "Seu lance foi concluído com sucesso" });
         }
+
+        this.setState({ disabled: false });
 
       });
     })
@@ -70,7 +78,7 @@ class BatchDetail extends React.Component{
 
           <p><span className="mdc-typography--display1">{this.state.batch.status}</span></p>
 
-          <Button label='Lance' raised primary onClick={this.handleClick} />
+          <Button label='Lance' raised primary onClick={this.handleClick} disabled={this.state.disabled} />
 
           <Snackbar
             active={this.state.snackbar}
