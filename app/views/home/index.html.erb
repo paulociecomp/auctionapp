@@ -1,4 +1,25 @@
-<h1>HOME</h1>
-<div class="">
+<section class="hero">
 
+  <div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9">
+        <h1 class="hero-title"><a href="#">Auction App</a></h1>
+
+        <h2 class="mdc-typography--display1">The best auctions of universe</h2>
+      </div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<div class="mdc-layout-grid">
+  <h1>Leilões</h1>
+
+  <div id="latest-auctions" style="padding: 0 0 200px 0"></div>
 </div>
+
+<% content_for :javascript do %>
+  <%= javascript_pack_tag 'latest_auctions' %>
+<% end %>

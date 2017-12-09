@@ -1,0 +1,65 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #ECEFF1;
+  height:100%;
+  color: #37474F;
+}
+
+.theme--custom-light-bg {
+  background-color: #dddddd;
+}
+.theme--custom-dark-bg {
+  background-color: #1d1d1d;
+}
+
+.catalog-logo span.material-icons{
+  width: 20px
+}
+
+.hero {
+  min-height: 480px;
+  background-color: #37474F;
+  color: #fff;
+  background: url(/assets/clem-onojeghuo-197522.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero a{
+  color: #fff;
+}
+
+.theme--custom-light-bg {
+  background-color: #dddddd;
+}
+
+.theme--custom-dark-bg {
+  background-color: #1d1d1d;
+}
+
+.hero-title{
+ font-size: 80px
+}
+
+.menu-button{
+ background: #1D1D1D;
+ border: #1D1D1D;
+ color: #fff;
+ padding: 20px;
+ cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+ .hero-title{
+   font-size: 40px
+ }
+
+ .hero{
+   min-height: 200px;
+ }
+}
