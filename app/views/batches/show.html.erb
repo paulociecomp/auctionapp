@@ -1,0 +1,8 @@
+<div class="mdc-layout-grid">
+  <input type="hidden" name="batch_id" id="batch_id" value="<%= @batch.id %>" />
+  <div id="batch-detail"></div>
+</div>
+
+<% content_for :javascript do %>
+  <%= javascript_pack_tag 'batch_detail' %>
+<% end %>

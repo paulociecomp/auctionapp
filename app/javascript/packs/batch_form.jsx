@@ -42,7 +42,6 @@ class FormBatch extends React.Component{
   handleSubmit = (event) => {
     event.preventDefault();
     const token = document.querySelector("meta[name='csrf-token']").getAttribute("content");
-    console.log(token);
     const formData = new FormData(document.querySelector('form'));
 
     fetch("/batches", {
@@ -72,7 +71,6 @@ class FormBatch extends React.Component{
           name='batch[description]'
           value={this.state.description}
           onChange={this.handleChange.bind(this, 'description')}
-          maxLength={60}
           required={true}
         />
 
@@ -82,7 +80,6 @@ class FormBatch extends React.Component{
           name='batch[product]'
           value={this.state.product}
           onChange={this.handleChange.bind(this, 'product')}
-          maxLength={40}
           required={true}
         />
 

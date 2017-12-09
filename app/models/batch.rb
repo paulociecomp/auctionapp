@@ -1,4 +1,9 @@
 class Batch < ApplicationRecord
+  include ConvertDecimalAttributes
+
+  convert_decimal :initial_bid
+  convert_decimal :finish_bid
+
   PERCENTAGE = 10
 
   def bid
